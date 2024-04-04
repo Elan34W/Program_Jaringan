@@ -18,7 +18,7 @@ buat sebuah program file transfer protocol menggunakan socket programming dengan
 
 ## PENJELASAN
 
-*Server*
+###Server###
 *Fungsi-fungsi :*
 -  list_files(): Fungsi ini digunakan untuk mendapatkan daftar file dan folder yang ada di direktori server. Menggunakan os.listdir('.') untuk mendapatkan list dari file dan folder di direktori saat ini.
 -  remove_file(file_name): Fungsi ini digunakan untuk menghapus file dengan nama tertentu dari server. Jika file ada, maka fungsi ini akan menghapus file tersebut menggunakan os.remove(file_name).
@@ -27,7 +27,7 @@ buat sebuah program file transfer protocol menggunakan socket programming dengan
 -  file_size(file_name): Fungsi ini digunakan untuk mendapatkan ukuran file dengan nama tertentu di server dalam satuan megabyte (MB).
 -  handle_command(command, client_socket): Fungsi ini merupakan pengendali utama yang memproses perintah yang diterima dari client. Fungsi ini akan memanggil fungsi-fungsi yang sesuai berdasarkan perintah yang diterima.
 
-*Client*
+###Client###
 *List command yang bisa dipanggil :*
 -  connme               : Digunakan untuk menghubungkan client dengan server menggunakan socket.
 -  ls                   : Digunakan untuk mendapatkan daftar file dan folder di direktori server, dan kemudian menampilkan hasilnya di terminal.
@@ -36,4 +36,13 @@ buat sebuah program file transfer protocol menggunakan socket programming dengan
 -  upload(file_name)    : Digunakan untuk mengunggah file dengan nama tertentu dari direktori lokal client ke server.
 -  file_size(file_name) : Digunakan untuk mendapatkan ukuran file dengan nama tertentu di server dalam satuan megabyte (MB), dan kemudian menampilkan hasilnya di terminal.
 -  byebye               : Digunakan untuk memutus koneksi antara client dan server, dan kemudian menutup socket client.
+
+##PENGGUNAAN##
+1. Pertama kita harus menjalankan program 'ftp_server' dahulu kemudian diikuti dengan program 'ftp_client'
+2. Setelah keduanya dijalan, pada bagian client kita akan mengetik "connme" untuk menghubungkan client ke server.
+  ```
+  Enter command: connme
+  Connected to server
+  ```
+3.
 
