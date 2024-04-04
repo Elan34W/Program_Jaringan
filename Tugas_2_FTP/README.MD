@@ -19,7 +19,7 @@ buat sebuah program file transfer protocol menggunakan socket programming dengan
 ## PENJELASAN
 
 ###Server###
-*Fungsi-fungsi :*
+Fungsi-fungsi :
 -  list_files(): Fungsi ini digunakan untuk mendapatkan daftar file dan folder yang ada di direktori server. Menggunakan os.listdir('.') untuk mendapatkan list dari file dan folder di direktori saat ini.
 -  remove_file(file_name): Fungsi ini digunakan untuk menghapus file dengan nama tertentu dari server. Jika file ada, maka fungsi ini akan menghapus file tersebut menggunakan os.remove(file_name).
 -  download_file(file_name, client_socket): Fungsi ini digunakan untuk mengirim file dengan nama tertentu dari server ke client. Fungsi ini membuka file, membaca datanya, mengirim panjang data terlebih dahulu, lalu mengirim data tersebut ke client.
@@ -28,7 +28,7 @@ buat sebuah program file transfer protocol menggunakan socket programming dengan
 -  handle_command(command, client_socket): Fungsi ini merupakan pengendali utama yang memproses perintah yang diterima dari client. Fungsi ini akan memanggil fungsi-fungsi yang sesuai berdasarkan perintah yang diterima.
 
 ###Client###
-*List command yang bisa dipanggil :*
+List command yang bisa dipanggil :
 -  connme               : Digunakan untuk menghubungkan client dengan server menggunakan socket.
 -  ls                   : Digunakan untuk mendapatkan daftar file dan folder di direktori server, dan kemudian menampilkan hasilnya di terminal.
 -  rm(file_name)        : Digunakan untuk menghapus file dengan nama tertentu dari server.
@@ -44,5 +44,12 @@ buat sebuah program file transfer protocol menggunakan socket programming dengan
   Enter command: connme
   Connected to server
   ```
-3.
+3.  Setelah terhubung kita dapat menjalankan perintah - perintah yang ada :
+  -  ls
+  ```
+  Enter a command: ls
+          coba.txt
+          ftp_client.py
+          ftp_server.py
+  ```
 
