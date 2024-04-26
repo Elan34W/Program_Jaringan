@@ -194,11 +194,13 @@ client_socket.close()
 ## Cara Penggunaan
 Untuk menjalankan kode kita bisa langsung menjalankannya di terminal VScode atau terminal python sendiri.
 1. Pertama jalankan server.py
+
 ![alt text](assets/server.png)
 
 Diatas adalah kondisi awal server, server tidak akan berjalan sampai ada 1 client melakukan koneksi.
 
 2. Selanjutnya jalankan client.py
+
 ![alt text](assets/client.png)
 
 Ketika client dijalankan server akan langsung mengirim warna kepada client
