@@ -173,7 +173,7 @@ while True:
 client_socket.close()
 ```
 #### Output:
-![alt text](assets/clientOutput.png)
+![alt text](assets/ClientOutput.png)
 
 #### Client:
 
@@ -195,11 +195,14 @@ client_socket.close()
 Untuk menjalankan kode kita bisa langsung menjalankannya di terminal VScode atau terminal python sendiri.
 1. Pertama jalankan server.py
 ![alt text](assets/server.png)
+
 Diatas adalah kondisi awal server, server tidak akan berjalan sampai ada 1 client melakukan koneksi.
 
 2. Selanjutnya jalankan client.py
 ![alt text](assets/client.png)
+
 Ketika client dijalankan server akan langsung mengirim warna kepada client
+
 ![alt text](assets/server1.png)
 
 3. Pada bagian klien kita hanya perlu menginput warna yang diberikan server tetapi telah di translate ke bahasa Indonesia. Misal `White = putih` dan jika benar maka akan menampilkan feedback dengan nilai 100
@@ -207,6 +210,7 @@ Ketika client dijalankan server akan langsung mengirim warna kepada client
 4. Sebaliknya jika kita memasukka warna yang salah maka kita akan mendapatkan feedback dengan nilain 0
 
 ![alt text](assets/telat.png)
+
 5. Kita juga dapat mengalami timeout apabila kita terlalu lama dalam mengisi inputan kita
 
 ## Cara Penggunaan dengan 10 client
