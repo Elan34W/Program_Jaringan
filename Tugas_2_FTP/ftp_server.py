@@ -17,24 +17,28 @@ def remove_file(file_name):
         return f"File {file_name} not found."
 
 def download_file(file_name, client_socket):
+    download_folder = "download"  # Specify the download folder
+    file_path = os.path.join(download_folder, file_name)
     if os.path.exists(file_name):
         try:
-            with open(file_name, "rb") as f:
+            with open(file_path, "rb") as f:
                 data = f.read()
                 file_length = len(data)
                 client_socket.sendall(file_length.to_bytes(4, byteorder='big'))
                 client_socket.sendall(data)
-                return b"Download successful."
+                return f"Download successful: {file_name}, {file_length} bytes"
         except Exception as e:
-            return f"Failed to download file: {str(e)}".encode()
+            return f"Failed to download file: {str(e)}"
     else:
         return b"File not found."
 
 def upload_file(file_name, data):
-    if os.path.exists(file_name):
+    upload_folder = "upload"  # Specify the upload folder
+    file_path = os.path.join(upload_folder, file_name)
+    if os.path.exists(file_path):
         return "File already exists on server."
     else:
-        with open(file_name, 'wb') as file:
+        with open(file_path, 'wb') as file:
             file.write(data)
         return f"{file_name} uploaded successfully."
 
@@ -62,6 +66,7 @@ def handle_command(command, client_socket):
         return file_size(file_name)
     else:
         return "Invalid command"
+
 def main():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server_socket.bind((SERVER_HOST, SERVER_PORT))

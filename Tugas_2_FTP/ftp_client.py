@@ -26,14 +26,16 @@ def download_file(file_name):
     client_socket.send(("download " + file_name).encode())
     file_length = int.from_bytes(client_socket.recv(4), byteorder='big')
     received_bytes = 0
-    with open(file_name, 'wb') as file:
+    download_folder = "download"  # Specify the download folder
+    file_path = os.path.join(download_folder, file_name)
+    with open(file_path, 'wb') as file:
         while received_bytes < file_length:
             data = client_socket.recv(min(BUFFER_SIZE, file_length - received_bytes))
             if not data:
                 break
             file.write(data)
             received_bytes += len(data)
-    print("Downloaded", file_name)
+    print("Downloaded", file_name, "to", download_folder)
 
 def upload_file(file_name):
     if os.path.exists(file_name):
